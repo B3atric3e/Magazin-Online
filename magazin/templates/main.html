@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+<style>
+    .Home-button {
+    background-image: url('https://media.discordapp.net/attachments/1168221296027500585/1239161272428400640/Untitlessssssssssssssssssssssssssssd-removebg-preview.png?ex=6641ea5d&is=664098dd&hm=fc296324cff077260c41aacdd89e0f0fd237e3b322d5ef7ab9b11f2405f482f5&=&format=webp&quality=lossless');
+    color: #000000;
+    text-decoration: none;
+    font-size: 40px;
+
+    }
+    .Home-button:hover {
+    color: white;
+    }
+
+</style>
+
+    <nav class="navbar navbar-expand-lg" style="background: linear-gradient(to right, #ccccff 0%, #ffccff 100%);">
+        <div class="container-fluid" style="background: linear-gradient(to right, #ccccff 0%, #ffccff 100%);">
+            <a class="navbar-brand" href="{% url 'products:products' %}"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+<a class="Home-button {% if request.path == "/" %}active{% endif %}" aria-current="page" href="{% url 'products:products' %}">
+    <!-- Imaginea -->
+    <img src="https://media.discordapp.net/attachments/1168221296027500585/1239161272428400640/Untitlessssssssssssssssssssssssssssd-removebg-preview.png?ex=6641ea5d&is=664098dd&hm=fc296324cff077260c41aacdd89e0f0fd237e3b322d5ef7ab9b11f2405f482f5&=&format=webp&quality=lossless" alt="Mirror" style="width: 200px; height: 100px;">
+</a>                    </li>
+                </ul>
+                <button type="button" class="btn btn-primary btn-sm me-3"
+                        data-mdb-toggle="tooltip"
+                        title="Cart"
+                        onclick="location.href='{% url "orders:cart" %}'">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+                <button class="btn btn-outline-light me-4"
+                        onclick="location.href='{% url "users:logout" %}'">Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
